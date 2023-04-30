@@ -1,19 +1,20 @@
 const Singleton = (function () {
-    
+
   let instance;
 
   function createInstance() {
-      return new Object('I am the instance');
+    return new Object('I am the instance');
   }
 
   return {
-      getInstance() {
-          if (!instance) {
-              instance = createInstance();
-          }
-          return instance;
+    getInstance() {
+      if (!instance) {
+        instance = createInstance();
       }
-  };
+      return instance;
+    }
+  }
+  
 })();
 
 function main() {
@@ -25,3 +26,5 @@ function main() {
 }
 
 main();
+
+// ejecucion con => node src/coe-smell/01-singleton.js
