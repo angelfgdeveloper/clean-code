@@ -4,7 +4,8 @@ import './style.css';
 // import './clean-code/06-clases-b';
 // import './clean-code/06-clases-c';
 // import './clean-code/07-tarea';
-import './code-smells/02-high-coupling';
+// import './code-smells/02-high-coupling';
+import './code-smells/02-low-coupling';
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
