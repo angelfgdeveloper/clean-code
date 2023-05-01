@@ -83,3 +83,14 @@
   cartBloc.onAddToCart(10);
 
 })();
+
+/**
+ * Detectar violaciones
+ * 
+ * Nombres de clases y modulos demasiado genericos
+ * Cambios en el codigo suele afectar la clase o modulo
+ * La clase involucra multiples capas
+ * Numbero elevado de importaciones
+ * Cantidad elevada de metodos publicos
+ * Excesivo numero de lineas de codigo
+ */
