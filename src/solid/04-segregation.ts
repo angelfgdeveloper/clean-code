@@ -34,3 +34,11 @@ class Penguin implements Bird, SwimmerBird {
   public eat(): void {}
   public swin(): void {}
 }
+
+/**
+ * Deteccion de violaciones
+ * 
+ * Si las interfaces que diseñamos nos obligan a violar los principios
+ * de responsabilidad unica y substitucion de Liskov.
+ * 
+ */
