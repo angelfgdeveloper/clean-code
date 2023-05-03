@@ -1,8 +1,15 @@
-export class LocalDataBaseService {
+import localPosts from '../data/local-database.json';
 
-  constructor() {}
+import { Post } from './05-dependency-b';
 
-  async getFakePosts() {
+// Aplicando inversion de dependencias
+export abstract class PostProvider {
+  abstract getPosts(): Promise<Post[]>
+}
+
+export class LocalDataBaseService implements PostProvider {
+
+  async getPosts(): Promise<Post[]> {
     return [
       {
         'userId': 1,
@@ -17,6 +24,25 @@ export class LocalDataBaseService {
         'body': 'est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla'
       },
     ];
+  }
+
+}
+
+export class JsonDataBaseService implements PostProvider {
+
+  async getPosts(): Promise<Post[]> {
+    return localPosts;
+  }
+
+}
+
+export class WebApiPostService implements PostProvider {
+
+  async getPosts(): Promise<Post[]> {
+    const resp = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const data = await resp.json();
+
+    return data;
   }
 
 }
